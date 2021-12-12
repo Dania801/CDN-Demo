@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Login Form</title>
+	<link rel='stylesheet' type='text/css' href='assets/css/index_style.css'>
+	<script>
+		function myFunction() {
+			var apiUrl = 'https://api.notfortest.com/login';
+			fetch(apiUrl, {
+				headers: {
+					'Content-Type': 'application/json',
+					'Custom-Header': 'test'
+				}
+			}).then((data) => {
+				console.log(data);
+				location.href = './home.html';
+			});
+		}
+	</script>
+</head>
+
+<body>
+	<h2>Login Page</h2><br>
+	<div class='login'>
+		<label><b style='line-height: 300%;'>User Name</b>
+		</label><br />
+		<input type='text' name='Uname' id='Uname' placeholder='Username'>
+		<br><br>
+		<label><b style='line-height: 300%;'>Password
+			</b>
+		</label>
+		<input type='Password' name='Pass' id='Pass' placeholder='Password'>
+		<br><br>
+		<button onclick='myFunction()'>Login</button>
+		<br><br>
+		<input type='checkbox' id='check'>
+		<span>Remember me</span>
+		<br><br>
+	</div>
+</body>
+
+</html>
